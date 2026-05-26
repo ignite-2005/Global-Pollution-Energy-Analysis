@@ -1,45 +1,62 @@
-# 🌍 Global Pollution Analysis & Energy Recovery
-**Data Science | Environmental Impact & Resource Optimization**
+# Global Pollution & Energy Analysis
 
-## 📌 Project Objective
-This project analyzes global pollution indices (Air, Water, and Soil) to develop strategies for pollution reduction and to predict the potential for converting pollutants into energy. It bridges the gap between environmental data and sustainable resource management.
-
-## 🛠️ Tech Stack & Environment
-- **Environment:** Google Colab
-- **Language:** Python
-- **Libraries:** Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn
-
-## 📂 Project Phases
-
-### Phase 1: Data Preprocessing & EDA
-- **Normalization:** Scaled pollution indices for consistent model training across diverse environmental metrics.
-- **Categorical Encoding:** Applied Label Encoding to handle `Country` and `Year` data.
-- **Visualizations:** Created correlation heatmaps to observe relationships between CO2 emissions, Industrial Waste, and Energy Recovery.
-
-
-
-### Phase 2: Predictive Modeling
-- **Linear Regression:** Trained to predict the specific amount of **Energy Recovery (GWh)** based on industrial waste and pollution levels.
-- **Logistic Regression:** Used to classify countries into **Pollution Severity Categories** (Low, Medium, High).
-
-### Phase 3: Evaluation
-- **Regression:** Evaluated using R-squared (R²) and Mean Squared Error (MSE).
-- **Classification:** Verified via Confusion Matrices and Classification Reports to ensure accurate categorization of high-risk regions.
+This repository contains notebooks and documentation for analyzing global environmental metrics, predicting renewable energy recovery capacities, and classifying country threat levels. The project is structured sequentially into chronological version directories to show progression from baseline models to hyperparameter-tuned classifiers.
 
 ---
 
-## 💡 Actionable Insights & Recommendations
-Beyond the models, this notebook provides data-driven strategies for environmental policy:
+## 📁 Repository Structure
 
-* **Severity Mapping:** Identified how specific pollution levels directly correlate with energy recovery potential, allowing for better prioritization of resources.
-* **Infrastructure Investment:** Highlighted specific countries and regions that would benefit most from immediate energy-recovery plant installations.
-* **Waste Management Policy:** Provided recommendations for reducing industrial waste based on model coefficients, aiming to optimize the balance between industrial output and environmental health.
+The files are organized into sequential version folders:
+
+```directory
+Global-Pollution-Energy-Analysis/
+├── evolve_v1/
+│   ├── baseline_workflow.ipynb                   # Preprocessing & baseline regression models (Version 1)
+│   ├── Global_Pollution_Analysis.csv               # Global environmental index dataset
+│   └── README.md                                 # Baseline regression details & EDA
+├── evolve_v2/
+│   ├── advanced_workflow.ipynb                   # Multi-class classification & hyperparameter tuning (Version 2)
+│   └── README.md                                 # Tuned classification benchmarks & GridSearchCV results
+└── README.md                                       # Repository project overview
+```
 
 ---
 
-## 📈 Future Work
-- **Advanced Classification:** Incorporating **SVM (Support Vector Machines)** with non-linear kernels to create more precise boundaries for pollution classification.
-- **Time-Series Analysis:** Forecasting future pollution trends to help governments prepare infrastructure ahead of time.
+## 🗺️ Project Progression Flowchart
+
+```mermaid
+graph TD
+    A["Global Environmental Data"] --> B["Data Preprocessing & Imputation"]
+    B --> C["Feature Engineering: Eco_Efficiency_Ratio"]
+    
+    subgraph v1_sub ["Version 1: Baseline Environmental Models (evolve_v1)"]
+        C --> D1["Linear Regression: GWh Prediction"]
+        C --> D2["Logistic Regression: Severity Classification"]
+        D1 --> E1["Findings: Country-specific baselines dominate weights"]
+    end
+
+    subgraph v2_sub ["Version 2: Classification & Tuning (evolve_v2)"]
+        C --> F1["Gaussian Naive Bayes"]
+        C --> F2["K-Nearest Neighbors"]
+        C --> F3["Decision Tree Classifier"]
+        F2 --> G["GridSearchCV Tuning"]
+        F3 --> G
+        G --> H["Findings: Multi-class split thresholds & tuned boundaries"]
+    end
+
+    E1 --> I["Policy Insights & Infrastructure Planning"]
+    H --> I
+```
 
 ---
-> **Note:** To run this project, ensure `global_pollution_dataset.csv` is in the same directory as the notebook.
+
+## 🔬 Subfolder Documentation & Notebooks
+
+Detailed information on the preprocessing, models, and findings for each phase is documented inside the version folders:
+
+1. **[evolve_v1/](file:///c:/Users/admin/VSCode/ML/Global-Pollution-Energy-Analysis/evolve_v1)**: Baseline Regression Modeling & Environmental Metrics Preprocessing.
+   - Notebook: [baseline_workflow.ipynb](file:///c:/Users/admin/VSCode/ML/Global-Pollution-Energy-Analysis/evolve_v1/baseline_workflow.ipynb)
+   - Phase Document: [evolve_v1/README.md](file:///c:/Users/admin/VSCode/ML/Global-Pollution-Energy-Analysis/evolve_v1/README.md)
+2. **[evolve_v2/](file:///c:/Users/admin/VSCode/ML/Global-Pollution-Energy-Analysis/evolve_v2)**: Advanced Multi-Class Classification & Hyperparameter Tuning.
+   - Notebook: [advanced_workflow.ipynb](file:///c:/Users/admin/VSCode/ML/Global-Pollution-Energy-Analysis/evolve_v2/advanced_workflow.ipynb)
+   - Phase Document: [evolve_v2/README.md](file:///c:/Users/admin/VSCode/ML/Global-Pollution-Energy-Analysis/evolve_v2/README.md)
